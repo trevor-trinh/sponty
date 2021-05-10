@@ -1,4 +1,6 @@
+import {useEffect} from 'react'
 function BodyText(props) {
+
   return (
     <>
       <p>

@@ -1,7 +1,7 @@
 let actionSpecData = {
-  Go: ["Park", "Mall", "Beach with friends oh wait you don'thave friends"],
-  Eat: ["Lamb", "Noodles", "Rice"],
-  Read: ["三国", "Boys in the Boat", "One"],
+  GO: ["Park", "Mall", "Beach with friends oh wait you don't have friends"],
+  EAT: ["Lamb", "Noodles", "Rice", "Kian's thighs"],
+  READ: ["三国", "Boys in the Boat", "One"],
 };
 
 // yeeted shuffle function

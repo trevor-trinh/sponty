@@ -12,14 +12,14 @@ function SelectText(props) {
 
   return (
     // add styling here for center and big
-    <div style={{ display: "inline-block", backgroundColor: "orange" }}>
+    <div id="looptext">
       {/* Action */}
       <ActionLoopText
         reroll={props.reroll}
         actionOptions={Object.keys(actionSpecData)}
         setFinalAction={props.setAction}
       />
-      {"  "}
+      {' '}
       {/* Specific */}
       <SpecLoopText
         reroll={props.reroll}

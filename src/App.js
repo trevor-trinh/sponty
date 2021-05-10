@@ -1,5 +1,4 @@
 import logo from './logo.svg';
-import './App.css';
 import Header from './components/Header'
 import SponText from './components/SponText'
 import {useState} from 'react'

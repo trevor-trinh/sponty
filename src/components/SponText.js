@@ -1,12 +1,11 @@
 import SelectText from "./SelectText";
 import BodyText from "./BodyText";
-import "../App.css";
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 function SponText(props) {
   const [action, setAction] = useState(null);
   const [spec, setSpec] = useState(null);
-
+  
   return (
     <div className="fullpage" id="bigspon">
       <SelectText

@@ -7,12 +7,12 @@ function SpecLoopText(props) {
 
   const handleChange = ({ currentEl }) => {
     finalSpec.current = currentEl;
-    console.log("🧭 " + finalSpec.current);
+    // console.log("🧭 " + finalSpec.current);
   };
 
   useEffect(() => {
     const intervalStartTimeout = setTimeout(() => {
-      console.log("start spec roll 🏁");
+      // console.log("start spec roll 🏁");
       setRollTime(100);
     }, 3500);
     return () => {
@@ -23,7 +23,7 @@ function SpecLoopText(props) {
   useEffect(() => {
     const intervalStopTimeout = setTimeout(() => {
       setRollTime(0);
-      console.log("stop spec roll 🛑");
+      // console.log("stop spec roll 🛑");
 
       props.setFinalSpec(finalSpec.current);
     }, 6000);
@@ -33,7 +33,7 @@ function SpecLoopText(props) {
   }, [props.reroll]);
 
   return (
-    <div style={{ display: "inline" }}>
+    <div id="spectext">
       <TextLoop
         interval={rollTime}
         children={props.specOptions}

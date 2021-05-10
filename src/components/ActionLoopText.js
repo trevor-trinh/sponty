@@ -7,12 +7,12 @@ function ActionLoopText(props) {
 
   const handleChange = ({ currentEl }) => {
     finalAction.current = currentEl;
-    console.log("🌏 " + finalAction.current);
+    // console.log("🌏 " + finalAction.current);
   };
 
   useEffect(() => {
     const intervalStartTimeout = setTimeout(() => {
-      console.log("🏁 start action roll");
+      // console.log("🏁 start action roll");
       setRollTime(100);
     }, 1000);
     return () => {
@@ -23,7 +23,7 @@ function ActionLoopText(props) {
   useEffect(() => {
     const intervalStopTimeout = setTimeout(() => {
       setRollTime(0);
-      console.log("🛑 stop action roll");
+      // console.log("🛑 stop action roll");
 
       props.setFinalAction(finalAction.current);
     }, 3000);
@@ -33,7 +33,7 @@ function ActionLoopText(props) {
   }, [props.reroll]);
 
   return (
-    <div style={{ display: "inline" }}>
+    <div id="actiontext">
       <TextLoop
         interval={rollTime}
         children={props.actionOptions}
