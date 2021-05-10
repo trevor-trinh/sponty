@@ -6,13 +6,13 @@ import {useState} from 'react'
 
 function App() {
   const [firstShow, setFirstShow] = useState(false)
-  const [render, setRender] = useState(false)
+  const [reroll, setReroll] = useState(false)
   return (
     <>
-      <Header setFirstShow={setFirstShow} firstShow={firstShow} setRender={setRender} render={render}/>
+      <Header firstShow={firstShow} setFirstShow={setFirstShow} reroll={reroll} setReroll={setReroll}/>
 
 
-      {firstShow && <SponText />}
+      {firstShow && <SponText reroll={reroll} />}
     </>
   );
 }

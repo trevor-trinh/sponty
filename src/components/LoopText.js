@@ -2,10 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 import TextLoop from "react-text-loop";
 
 
-function LoopText() {
+function LoopText(props) {
   const [options, setOptions] = useState(["Go", "Eat", "Read"]);
   const [rollTime, setRollTime] = useState(0);
-  const reroll = useRef(false)
 
   // can use this to update list every few days from the google sheet
   // useEffect(() => {
@@ -24,15 +23,6 @@ function LoopText() {
   //   };
   // }, []);
 
-  const getReroll = () => {
-    if(reroll.current){
-      reroll.current = false
-      return 1
-    }
-    reroll.current = true
-    return 0
-  }
-
   useEffect(() => {
     const intervalStartTimeout = setTimeout(() => {
       console.log("start");
@@ -41,7 +31,7 @@ function LoopText() {
     return () => {
       clearTimeout(intervalStartTimeout);
     };
-  }, [getReroll()]);
+  }, [props.reroll]);
 
   useEffect(() => {
     const intervalStopTimeout = setTimeout(() => {
@@ -52,7 +42,7 @@ function LoopText() {
     return () => {
       clearTimeout(intervalStopTimeout);
     };
-  }, [getReroll()]);
+  }, [props.reroll]);
 
   return (
     <>

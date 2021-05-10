@@ -6,9 +6,9 @@ function Header(props){
         if(!props.firstShow){ 
             props.setFirstShow(true)
         } 
-        props.setRender(!props.render)
-        console.log('test')
+        props.setReroll(!props.reroll)
     }
+    
     return(
         <div className="fullpage">
             <h1>Feeling Spontaneous</h1>
