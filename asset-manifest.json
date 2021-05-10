@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/sponty/static/css/main.be4c5c11.chunk.css",
+    "main.js": "/sponty/static/js/main.482c402e.chunk.js",
+    "main.js.map": "/sponty/static/js/main.482c402e.chunk.js.map",
+    "runtime-main.js": "/sponty/static/js/runtime-main.d4837d7d.js",
+    "runtime-main.js.map": "/sponty/static/js/runtime-main.d4837d7d.js.map",
+    "static/js/2.9234a234.chunk.js": "/sponty/static/js/2.9234a234.chunk.js",
+    "static/js/2.9234a234.chunk.js.map": "/sponty/static/js/2.9234a234.chunk.js.map",
+    "static/js/3.8e4ba9f9.chunk.js": "/sponty/static/js/3.8e4ba9f9.chunk.js",
+    "static/js/3.8e4ba9f9.chunk.js.map": "/sponty/static/js/3.8e4ba9f9.chunk.js.map",
+    "index.html": "/sponty/index.html",
+    "static/css/main.be4c5c11.chunk.css.map": "/sponty/static/css/main.be4c5c11.chunk.css.map",
+    "static/js/2.9234a234.chunk.js.LICENSE.txt": "/sponty/static/js/2.9234a234.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/sponty/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d4837d7d.js",
+    "static/js/2.9234a234.chunk.js",
+    "static/css/main.be4c5c11.chunk.css",
+    "static/js/main.482c402e.chunk.js"
+  ]
+}
