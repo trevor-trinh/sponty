@@ -1,15 +1,24 @@
-import LoopText from './LoopText'
-import BodyText from './BodyText'
-import '../App.css';
+import SelectText from "./SelectText";
+import BodyText from "./BodyText";
+import "../App.css";
+import { useState } from "react";
 
-function SponText(props){
-    return (
-        <div className="fullpage" id="bigspon">
-            <LoopText reroll={props.reroll}/>
-            <BodyText />
-        </div>
-    )
+function SponText(props) {
+  const [action, setAction] = useState(null);
+  const [spec, setSpec] = useState(null);
+
+  return (
+    <div className="fullpage" id="bigspon">
+      <SelectText
+        reroll={props.reroll}
+        setAction={setAction}
+        getAction={action}
+        setSpec={setSpec}
+        getSpec={spec}
+      />
+      <BodyText action={action} spec={spec} />
+    </div>
+  );
 }
 
-
-export default SponText
+export default SponText;
