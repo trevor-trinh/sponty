@@ -11,8 +11,8 @@ function App() {
     <>
       <Header firstShow={firstShow} setFirstShow={setFirstShow} reroll={reroll} setReroll={setReroll}/>
 
-
       {firstShow && <SponText reroll={reroll} />}
+      
     </>
   );
 }

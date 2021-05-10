@@ -1,28 +1,22 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import ActionLoopText from "./ActionLoopText";
 import SpecLoopText from "./SpecLoopText";
+import actionSpecData from "../actionSpecData"
 
 function SelectText(props) {
-  let actions = ["Go", "Eat", "Read"];
-  let actionSpecPair = {
-    Go: ["Park", "Mall", "Beach with friends oh wait you don'thave friends"],
-    Eat: ["Lamb", "Noodles", "Rice"],
-    Read: ["三国", "Boys in the Boat", "One"],
-  };
-
-  const [actionOptions, setActionOptions] = useState(actions);
   const [specOptions, setSpecOptions] = useState("");
 
   useEffect(() => {
-    setSpecOptions(actionSpecPair[props.getAction])
-  }, [props.getAction])
+    setSpecOptions(actionSpecData[props.getAction]);
+  }, [props.getAction]);
 
   return (
-    <div style={{ display: "inline-block" }}>
+    // add styling here for center and big
+    <div style={{ display: "inline-block", backgroundColor: "orange" }}>
       {/* Action */}
       <ActionLoopText
         reroll={props.reroll}
-        actionOptions={actionOptions}
+        actionOptions={Object.keys(actionSpecData)}
         setFinalAction={props.setAction}
       />
       {"  "}

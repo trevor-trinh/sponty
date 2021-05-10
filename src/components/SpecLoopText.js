@@ -14,7 +14,7 @@ function SpecLoopText(props) {
     const intervalStartTimeout = setTimeout(() => {
       console.log("start spec roll 🏁");
       setRollTime(100);
-    }, 4000);
+    }, 3500);
     return () => {
       clearTimeout(intervalStartTimeout);
     };
@@ -22,10 +22,10 @@ function SpecLoopText(props) {
 
   useEffect(() => {
     const intervalStopTimeout = setTimeout(() => {
-        setRollTime(0);
+      setRollTime(0);
       console.log("stop spec roll 🛑");
 
-      props.setFinalSpec(finalSpec.current)
+      props.setFinalSpec(finalSpec.current);
     }, 6000);
     return () => {
       clearTimeout(intervalStopTimeout);
