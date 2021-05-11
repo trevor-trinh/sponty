@@ -9,7 +9,7 @@ function SelectText(props) {
   useEffect(() => {
     // will bug out if there is only 1 action on the spreadsheet so don't do that
     if(props.getAction != null){
-      setSpecOptions(Object.keys(actionSpecData[props.getAction]));
+      setSpecOptions(actionSpecData[props.getAction].map(element => element[0]));
     }
   }, [props.getAction]);
 
@@ -27,7 +27,7 @@ function SelectText(props) {
       <SpecLoopText
         reroll={props.reroll}
         specOptions={specOptions}
-        setFinalSpec={props.setSpec}
+        setSheetRow={props.setSheetRow}
         setRenderBody={props.setRenderBody}
       />
     </div>

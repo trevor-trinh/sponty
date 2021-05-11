@@ -7,15 +7,14 @@ export var actionSpecData = {};
 function cleanData(dirty) {
   let output = {};
   for (const row of dirty) {
-    for (const col of row) {
-      const action = row[0];
-      if (!(action in output)) {
-        output[action] = {};
-      }
-      const specific = row[1];
-      const description = row[2];
-      output[action][specific] = description;
+    const action = row[0];
+    const specific = row[1];
+    const description = row[2];
+
+    if (!(action in output)) {
+      output[action] = [];
     }
+    output[action].push([specific, description]);
   }
   return output;
 }
@@ -28,12 +27,9 @@ function shuffle(a) {
   return a;
 }
 
+// not even sure if this works
 function shuffleAll() {
   // shuffles the actions
-  console.log('ATTENTION')
-  console.log(Object.keys(actionSpecData))
-  console.log(shuffle(Object.keys(actionSpecData)))
-  console.log('STOP ATTENTION')
   actionSpecData = shuffle(Object.keys(actionSpecData))
     .map((key) => ({ key, value: actionSpecData[key] }))
     .reduce((acc, e) => {
@@ -42,11 +38,9 @@ function shuffleAll() {
     }, {});
 
   // shuffles the specs
-  // console.log(actionSpecData)
-  // for (var action in actionSpecData) {
-  //   shuffle(actionSpecData[action]);
-  //   console.log(action)
-  // }
+  for (var action in actionSpecData) {
+    shuffle(actionSpecData[action]);
+  }
 }
 
 export const dataPromise = new Promise((resolve) => {
@@ -59,9 +53,7 @@ export const dataPromise = new Promise((resolve) => {
       actionSpecData = cleanData(rawData);
 
       // console.log("Shuffled");
-      console.log("preshuffle", actionSpecData)
       shuffleAll(actionSpecData);
-      console.log("postshuffle", actionSpecData)
       resolve("Data stuff done");
     },
   });
@@ -95,4 +87,3 @@ neeed to make it what it is below
 //   DO: { do1: 'do2' },
 //   GO: { go1: 'go2' }
 // }
-

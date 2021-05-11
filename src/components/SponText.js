@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from "react";
 
 function SponText(props) {
   const [action, setAction] = useState(null);
-  const [spec, setSpec] = useState(null);
+  const [sheetRow, setSheetRow] = useState(null);
 
   return (
     <div className="fullpage" id="bigspon">
@@ -12,11 +12,10 @@ function SponText(props) {
         reroll={props.reroll}
         setAction={setAction}
         getAction={action}
-        setSpec={setSpec}
-        getSpec={spec}
+        setSheetRow={setSheetRow}
         setRenderBody={props.setRenderBody}
       />
-      {props.renderBody ? <BodyText action={action} spec={spec} /> : null}
+      {props.renderBody ? <BodyText action={action} sheetRow={sheetRow} /> : null}
     </div>
   );
 }

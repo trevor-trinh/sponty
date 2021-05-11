@@ -5,8 +5,10 @@ function SpecLoopText(props) {
   const [rollTime, setRollTime] = useState(0);
   const finalSpec = useRef(null);
 
-  const handleChange = ({ currentEl }) => {
-    finalSpec.current = currentEl;
+  const handleChange = ({currentEl, currentWordIndex}) => {
+    // finalSpec.current = currentEl;
+    // changed so gives item row instead for future proofing data
+    finalSpec.current = currentWordIndex;
     // console.log("🧭 " + finalSpec.current);
   };
 
@@ -25,7 +27,7 @@ function SpecLoopText(props) {
       setRollTime(0);
       // console.log("stop spec roll 🛑");
 
-      props.setFinalSpec(finalSpec.current);
+      props.setSheetRow(finalSpec.current);
       props.setRenderBody(true)
     }, 6000);
     return () => {
