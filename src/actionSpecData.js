@@ -6,19 +6,17 @@ let actionSpecData = [];
 
 function cleanData(dirty) {
   let output = {};
-  for (let row in dirty) {
-    for (let col in dirty[row]) {
-      const action = dirty[row][0];
+  for (const row of dirty) {
+    for (const col of row) {
+      const action = row[0];
       if (!(action in output)) {
         output[action] = {};
       }
-      const specific = dirty[row][1];
-      const description = dirty[row][2];
+      const specific = row[1];
+      const description = row[2];
       output[action][specific] = description;
     }
   }
-  console.log('PAY ATTENTION')
-  console.log(output)
   return output;
 }
 
@@ -48,15 +46,16 @@ function shuffleAll() {
 export const dataPromise = new Promise((resolve) => {
   readRemoteFile(url, {
     complete: ({ data }) => {
-      console.log("Fetched");
+      // console.log("Fetched");
       const [, ...rawData] = data;
 
-      console.log("Cleaned");
+      // console.log("Cleaned");
       actionSpecData = cleanData(rawData);
 
-      console.log("Shuffled");
+      // console.log("Shuffled");
       shuffleAll(actionSpecData);
-      resolve("resolved");
+      console.log(Object.keys(actionSpecData))
+      resolve("Data Done");
     },
   });
 });

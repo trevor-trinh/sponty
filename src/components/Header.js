@@ -13,19 +13,19 @@ function Header(props) {
 
   useEffect(() => {
     async function getData() {
-      console.log("waiting");
-      await dataPromise.then(result => console.log(result));
+      // console.log("waiting");
+      await dataPromise.then((result) => console.log(result));
       props.setDataLoaded(true);
-      console.log("waiting done");
+      // console.log("waiting done");
     }
-    getData()
+    getData();
   }, []);
 
   return (
     <div className="fullpage">
       <div id="header">
         <h1 id="headertext">Feeling Spontaneous</h1>
-        {props.dataLoaded && (
+        {props.dataLoaded ? (
           <Link
             id="headergo"
             to="bigspon"
@@ -34,6 +34,8 @@ function Header(props) {
           >
             Go
           </Link>
+        ) : (
+          <h3>loading...</h3>
         )}
         {/* not sure hwat onClickCapture does but it works */}
       </div>
