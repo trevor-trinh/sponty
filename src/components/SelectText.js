@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import ActionLoopText from "./ActionLoopText";
 import SpecLoopText from "./SpecLoopText";
-import actionSpecData from "../actionSpecData"
+import {actionSpecData} from "../actionSpecData"
 
 function SelectText(props) {
   const [specOptions, setSpecOptions] = useState("");
 
-  // TODO: DATA SHAPE IS DIFFERENT
   useEffect(() => {
-    setSpecOptions(actionSpecData[props.getAction]);
+    // will bug out if there is only 1 action on the spreadsheet so don't do that
+    if(props.getAction != null){
+      setSpecOptions(Object.keys(actionSpecData[props.getAction]));
+    }
   }, [props.getAction]);
 
   return (
@@ -17,7 +19,6 @@ function SelectText(props) {
       {/* Action */}
       <ActionLoopText
         reroll={props.reroll}
-        // TODO: DATA SHAPE IS DIFFERENT
         actionOptions={Object.keys(actionSpecData)}
         setFinalAction={props.setAction}
       />

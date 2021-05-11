@@ -2,7 +2,7 @@ import { readRemoteFile } from "react-papaparse";
 
 const url =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vQJT303Jsua0Uikb7VSNToxdU6sBJRwtPK5cGtpp6iEI4O7tmwSHTURbg1q6l7r_cMFHDrCJ4gAwZTU/pub?output=csv";
-let actionSpecData = [];
+export var actionSpecData = {};
 
 function cleanData(dirty) {
   let output = {};
@@ -30,6 +30,10 @@ function shuffle(a) {
 
 function shuffleAll() {
   // shuffles the actions
+  console.log('ATTENTION')
+  console.log(Object.keys(actionSpecData))
+  console.log(shuffle(Object.keys(actionSpecData)))
+  console.log('STOP ATTENTION')
   actionSpecData = shuffle(Object.keys(actionSpecData))
     .map((key) => ({ key, value: actionSpecData[key] }))
     .reduce((acc, e) => {
@@ -38,9 +42,11 @@ function shuffleAll() {
     }, {});
 
   // shuffles the specs
-  for (var action in actionSpecData) {
-    shuffle(actionSpecData[action]);
-  }
+  // console.log(actionSpecData)
+  // for (var action in actionSpecData) {
+  //   shuffle(actionSpecData[action]);
+  //   console.log(action)
+  // }
 }
 
 export const dataPromise = new Promise((resolve) => {
@@ -53,9 +59,10 @@ export const dataPromise = new Promise((resolve) => {
       actionSpecData = cleanData(rawData);
 
       // console.log("Shuffled");
+      console.log("preshuffle", actionSpecData)
       shuffleAll(actionSpecData);
-      console.log(Object.keys(actionSpecData))
-      resolve("Data Done");
+      console.log("postshuffle", actionSpecData)
+      resolve("Data stuff done");
     },
   });
 });
@@ -88,4 +95,4 @@ neeed to make it what it is below
 //   DO: { do1: 'do2' },
 //   GO: { go1: 'go2' }
 // }
-export default actionSpecData;
+
