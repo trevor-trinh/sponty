@@ -61,6 +61,7 @@
 
 
 /* go button in header */
+/* TODO: dont select text and make cursour a clicky one */
 #headergo {
   font-size: calc(1rem + 10px);
   padding: 0 2rem;

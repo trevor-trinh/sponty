@@ -5,7 +5,7 @@ import { useEffect, useState, useRef } from "react";
 function SponText(props) {
   const [action, setAction] = useState(null);
   const [spec, setSpec] = useState(null);
-  
+
   return (
     <div className="fullpage" id="bigspon">
       <SelectText
@@ -14,8 +14,9 @@ function SponText(props) {
         getAction={action}
         setSpec={setSpec}
         getSpec={spec}
+        setRenderBody={props.setRenderBody}
       />
-      <BodyText action={action} spec={spec} />
+      {props.renderBody ? <BodyText action={action} spec={spec} /> : null}
     </div>
   );
 }

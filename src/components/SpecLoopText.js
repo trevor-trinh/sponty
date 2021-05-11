@@ -26,6 +26,7 @@ function SpecLoopText(props) {
       // console.log("stop spec roll 🛑");
 
       props.setFinalSpec(finalSpec.current);
+      props.setRenderBody(true)
     }, 6000);
     return () => {
       clearTimeout(intervalStopTimeout);

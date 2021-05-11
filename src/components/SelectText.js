@@ -6,6 +6,7 @@ import actionSpecData from "../actionSpecData"
 function SelectText(props) {
   const [specOptions, setSpecOptions] = useState("");
 
+  // TODO: DATA SHAPE IS DIFFERENT
   useEffect(() => {
     setSpecOptions(actionSpecData[props.getAction]);
   }, [props.getAction]);
@@ -16,6 +17,7 @@ function SelectText(props) {
       {/* Action */}
       <ActionLoopText
         reroll={props.reroll}
+        // TODO: DATA SHAPE IS DIFFERENT
         actionOptions={Object.keys(actionSpecData)}
         setFinalAction={props.setAction}
       />
@@ -25,6 +27,7 @@ function SelectText(props) {
         reroll={props.reroll}
         specOptions={specOptions}
         setFinalSpec={props.setSpec}
+        setRenderBody={props.setRenderBody}
       />
     </div>
   );
