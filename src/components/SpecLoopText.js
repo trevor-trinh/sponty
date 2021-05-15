@@ -4,8 +4,7 @@ import TextLoop from "react-text-loop";
 function SpecLoopText(props) {
   const [rollTime, setRollTime] = useState(0);
   const finalSpec = useRef(null);
-
-  const handleChange = ({currentEl, currentWordIndex}) => {
+  const handleChange = ({ currentWordIndex }) => {
     // finalSpec.current = currentEl;
     // changed so gives item row instead for future proofing data
     finalSpec.current = currentWordIndex;
@@ -28,7 +27,7 @@ function SpecLoopText(props) {
       // console.log("stop spec roll 🛑");
 
       props.setSheetRow(finalSpec.current);
-      props.setRenderBody(true)
+      props.setRenderBody(true);
     }, 6000);
     return () => {
       clearTimeout(intervalStopTimeout);
@@ -41,6 +40,8 @@ function SpecLoopText(props) {
         interval={rollTime}
         children={props.specOptions}
         onChange={handleChange}
+        noWrap={false}
+        className="makemefull"
       />
     </div>
   );

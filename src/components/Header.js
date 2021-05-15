@@ -7,8 +7,8 @@ function Header(props) {
     if (!props.firstShow && props.dataLoaded) {
       props.setFirstShow(true);
     }
-    props.setReroll(!props.reroll);
     props.setRenderBody(false);
+    props.setReroll(!props.reroll);
   };
 
   useEffect(() => {

@@ -15,22 +15,22 @@ function SelectText(props) {
 
   return (
     // add styling here for center and big
-    <div id="looptext">
+    <>
       {/* Action */}
       <ActionLoopText
         reroll={props.reroll}
         actionOptions={Object.keys(actionSpecData)}
         setFinalAction={props.setAction}
       />
-      {' '}
       {/* Specific */}
       <SpecLoopText
         reroll={props.reroll}
         specOptions={specOptions}
         setSheetRow={props.setSheetRow}
         setRenderBody={props.setRenderBody}
+        
       />
-    </div>
+    </>
   );
 }
 

@@ -60,30 +60,17 @@ export const dataPromise = new Promise((resolve) => {
 });
 
 /*
-My Data Shape
-Rows of the google sheet
+Data Shape:
+
+Rows of the google sheet:
 Action, Spec, Desc
-
 ["Read", "specific book", "details for body"]
-neeed to make it what it is below
+
+Changes into
+
+{
+  ACTION1: [[spec1, desc1, otherdata1], [spec2, desc2, otherdata2]],
+  ACTION2: [[spec3, desc3, otherdata3]],
+  ACTION3: [[spec4, desc4, otherdata4]]
+}
 */
-
-// let actionSpecData = {
-//   GO: ["Park", "Mall", "Beach with friends oh wait you don't have friends"],
-//   EAT: ["Lamb", "Noodles", "Rice", "Kian's thighs"],
-//   READ: ["三国", "Boys in the Boat", "One"],
-// };
-
-// yeeted shuffle function
-
-// new data looks like this
-// {ACTION: {spec: desc, spec: desc}, ACTION2: {spec2: desc2, spec2: desc2}}
-// {
-//   READ: {
-//     read1: 'read2',
-//     'read 2': 'read3',
-//     "Kian's thighs": 'they are a very great source of protien and provide your jaws with the power to chew through anything'
-//   },
-//   DO: { do1: 'do2' },
-//   GO: { go1: 'go2' }
-// }
