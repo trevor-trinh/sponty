@@ -1,6 +1,6 @@
 import { Link } from "react-scroll";
 import { useEffect } from "react";
-import { dataPromise } from "../actionSpecData";
+import { dataPromise } from "../utils/actionSpecData";
 
 function Header(props) {
   const handleClick = () => {

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { actionSpecData } from "../actionSpecData";
+import { actionSpecData } from "../utils/actionSpecData";
 
 function BodyText(props) {
   // this will crash if switch window or tab while rolling ¯\_(ツ)_/¯
